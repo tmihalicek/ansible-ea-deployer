@@ -7,9 +7,7 @@ Installs elastic-agent on Linux.
 
 ## Requirements
 
-SSH public key authentication. Username should have passwordless `sudo su -`
-
-### /etc/sudoers.d/username
+SSH public key authentication. Username should have passwordless `sudo su -`. Sudoers.d example: (`/etc/sudoers.d/username`).
 
     username ALL=(ALL) NOPASSWD: ALL
 
