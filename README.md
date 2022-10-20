@@ -7,9 +7,19 @@ Installs elastic-agent on Linux.
 
 ## Requirements
 
-None.
+SSH public key authentication. Username should have passwordless `sudo su -`
 
 ## Role Variables
+
+Available variables are listed below:
+
+    elastic_agent_version: 8.2.3
+
+Elastic agent version.
+
+    fleet_url: https://kibana.domain.org:8220
+
+Fleet URL.
 
 ## Example Playbook
 
