@@ -13,7 +13,7 @@ None.
 
 ## Example Playbook
 
-    - hosts: all
+    - hosts: elastic_agent_clients
       roles:
         - { role: "role/ea-deployer" }
 
