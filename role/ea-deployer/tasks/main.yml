@@ -26,13 +26,13 @@
 - name: Download file from a file path
   become: yes
   ansible.builtin.get_url:
-    url: https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.2.3-linux-x86_64.tar.gz
-    dest: /tmp/elastic-agent-8.2.3-linux-x86_64.tar.gz
+    url: https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-{{ elastic_agent_version }}-linux-x86_64.tar.gz
+    dest: /tmp/elastic-agent-{{ elastic_agent_version }}-linux-x86_64.tar.gz
 
 - name: UNZIPPING the files
   become: yes
   unarchive:
-    src: /tmp/elastic-agent-8.2.3-linux-x86_64.tar.gz
+    src: /tmp/elastic-agent-{{ elastic_agent_version }}-linux-x86_64.tar.gz
     dest: /tmp
     copy: no
 
@@ -40,4 +40,4 @@
   become: yes
   ansible.builtin.shell:
     cmd: ./elastic-agent install --force --insecure --url={{ fleet_url }} --enrollment-token={{ fleet_token }}
-    chdir: /tmp/elastic-agent-8.2.3-linux-x86_64
+    chdir: /tmp/elastic-agent-{{ elastic_agent_version }}-linux-x86_64
