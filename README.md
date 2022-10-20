@@ -15,7 +15,7 @@ None.
 
     - hosts: all
       roles:
-        - geerlingguy.ntp
+        - { role: "role/ea-deployer" }
 
 *Inside `role/ea-deployer/vars/main.yml`*:
 
