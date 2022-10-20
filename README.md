@@ -2,3 +2,4 @@
 Deployment of elastic agent via ansible.
 
 tmihalicek
+fixes
