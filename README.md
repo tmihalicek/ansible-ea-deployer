@@ -19,7 +19,7 @@ None.
 
 *Inside `role/ea-deployer/vars/main.yml`*:
 
-    ntp_timezone: Europe/Zagreb
+    elastic_agent_version: 8.2.3
 
 ## Author Information
 

@@ -1,2 +1,43 @@
 ---
-# tasks file for role/ea-deployer
+# tasks file for roles/deploy-elastic-agent
+
+- name: installing auditd on Debian/Ubuntu
+  become: yes
+  apt: 
+    pkg: auditd 
+    update_cache: yes
+    state: present
+  when: ansible_facts['distribution'] == 'Ubuntu' or ansible_distribution == 'Debian'
+
+- name: installing auditd on RHEL/CentOS
+  become: yes
+  yum:
+    pkg: auditd
+    state: present
+  when: ansible_facts['distribution'] == 'Red Hat Enterprise Linux' or ansible_distribution == 'CentOS'
+
+- name: Disable service auditd and ensure it is masked
+  become: yes
+  ansible.builtin.systemd:
+    name: auditd
+    enabled: no
+    masked: yes
+
+- name: Download file from a file path
+  become: yes
+  ansible.builtin.get_url:
+    url: https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.2.3-linux-x86_64.tar.gz
+    dest: /tmp/elastic-agent-8.2.3-linux-x86_64.tar.gz
+
+- name: UNZIPPING the files
+  become: yes
+  unarchive:
+    src: /tmp/elastic-agent-8.2.3-linux-x86_64.tar.gz
+    dest: /tmp
+    copy: no
+
+- name: Install elastic-agent
+  become: yes
+  ansible.builtin.shell:
+    cmd: ./elastic-agent install --force --insecure --url={{ fleet_url }} --enrollment-token={{ fleet_token }}
+    chdir: /tmp/elastic-agent-8.2.3-linux-x86_64
