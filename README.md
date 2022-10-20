@@ -47,6 +47,10 @@ Fleet URL.
     elastic_agent_version: 8.2.3
     fleet_url: https://kibana.domain.org:8220
 
+## Sample Playbook
+
+    ansible-playbook deploy-elastic-agent.yml
+
 ## Author Information
 
 This role was created in 2022 by [Tomislav Mihaliček](https://tmihalicek.github.io/).
