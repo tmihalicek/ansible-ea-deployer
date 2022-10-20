@@ -9,6 +9,10 @@ Installs elastic-agent on Linux.
 
 SSH public key authentication. Username should have passwordless `sudo su -`
 
+### /etc/sudoers.d/username
+
+    username ALL=(ALL) NOPASSWD: ALL
+
 ## Role Variables
 
 Available variables are listed below:
