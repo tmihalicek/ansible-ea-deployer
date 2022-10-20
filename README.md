@@ -37,5 +37,5 @@ None.
 
 ## Author Information
 
-This role was created in 2022 by [Tomislav Mihalicek](https://tmihalicek.github.io/).
+This role was created in 2022 by [Tomislav Mihaliček](https://tmihalicek.github.io/).
 
