@@ -39,5 +39,5 @@
 - name: Install elastic-agent
   become: yes
   ansible.builtin.shell:
-    cmd: ./elastic-agent install --force --insecure --url={{ fleet_url }} --enrollment-token={{ fleet_token }}
+    cmd: ./elastic-agent install --force --insecure --url={{ fleet_url }}:8220 --enrollment-token={{ fleet_token }}
     chdir: /tmp/elastic-agent-{{ elastic_agent_version }}-linux-x86_64
