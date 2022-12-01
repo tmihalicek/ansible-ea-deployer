@@ -19,7 +19,7 @@ Available variables are listed below:
 
 Elastic agent version.
 
-    fleet_url: https://kibana.domain.org:8220
+    fleet_url: https://kibana.domain.org
 
 Fleet URL.
 

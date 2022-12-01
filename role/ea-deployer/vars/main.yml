@@ -2,4 +2,4 @@
 # vars file for role/ea-deployer
 
 elastic_agent_version: 8.2.3
-fleet_url: https://kibana.domain.org:8220
+fleet_url: https://kibana.domain.org
